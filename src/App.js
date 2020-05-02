@@ -1,23 +1,18 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import "./styles.css";
+import Search from "./Search";
+import Weather from "./Weather";
+import Forecast from "./Forecast";
+import Footer from "./Footer";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1> Hello World</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container weather-app">
+      <h1>Weather App</h1>
+      <Search />
+      <Weather />
+      <Forecast />
+      <Footer />
     </div>
   );
 }
-
-export default App;

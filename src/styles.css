@@ -1,0 +1,128 @@
+.App {
+  font-family: "Bellota", cursive;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#forecast-block {
+  display: block-inline;
+  margin: 1px 0px 1px 107px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+body {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 10px 10px 10px;
+  font-family: "Bellota", cursive;
+  max-width: 100%;
+  margin-top: 10px;
+  max-height: 100%;
+}
+
+form {
+  margin: 1px 1px 20px 1px;
+}
+
+h2 {
+  margin: 5px 5px 10px 5px;
+}
+
+h3 {
+  margin: 5px 0px 5px 0px;
+}
+
+p {
+  display: block;
+  margin: 0 auto;
+  padding: 0 0 0 0;
+  margin: -10px 0 -5px 0;
+}
+
+image {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+hr {
+  color: #dadde1;
+}
+
+a.col-sm #FahrenheitLink {
+  color: blue;
+}
+
+footer,
+a.Github {
+  text-align: center;
+  margin: 0px 0px;
+  color: grey;
+}
+
+.weather-app {
+  max-width: 800px;
+  border: 1px solid #dadde1;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 15px;
+  background: #f9fcfb;
+}
+.btn {
+  max-width: 400px;
+  max-height: 40px;
+  margin-top: -4px;
+  border-radius: 10px;
+}
+
+.date-display {
+  font-size: 15px;
+}
+
+.description {
+  color: grey;
+}
+
+#description {
+  font-size: 18px;
+  margin-left: -4px;
+  line-height: 10px;
+  padding: 10px 0 0px 0;
+}
+
+.display .active {
+  color: black;
+  cursor: default;
+}
+
+.display .active:hover {
+  text-decoration: none;
+}
+
+.btn-search {
+  background: #70d5d2;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-current {
+  background: #fc6f9c;
+  color: white;
+  border: 1px solid white;
+}
+
+.hue-rotate {
+  -webkit-filter: hue-rotate(45deg);
+  filter: hue-rotate(45deg);
+}
+
+.badge-light {
+  margin-bottom: 10px;
+  background: #9771f3;
+  color: white;
+  border: 1px solid white;
+}
