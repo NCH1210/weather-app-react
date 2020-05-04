@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import "./styles.css";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
+import Search from "./Search";
+
+<Search city="Paris" />;
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-  const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -66,7 +69,6 @@ export default function Weather(props) {
     );
   } else {
     const apiKey = "f45e74d7c2b9da42eac08c872edb3d3d";
-    let city = "London";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
     return "Loading...";

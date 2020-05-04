@@ -6,7 +6,7 @@
 
 #forecast-block {
   display: block-inline;
-  margin: 1px 0px 1px 107px;
+  margin: 1px 0px 0px 150px;
 }
 
 img {
@@ -120,7 +120,7 @@ a.Github {
   filter: hue-rotate(45deg);
 }
 
-.badge-light {
+#badge {
   margin-bottom: 10px;
   background: #9771f3;
   color: white;

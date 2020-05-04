@@ -5,7 +5,9 @@ export default function Forecast() {
   return (
     <div className="Forecast">
       <h4>
-        <span className="badge badge-light">Forecast</span>
+        <span id="badge" className="badge badge-light">
+          Forecast
+        </span>
       </h4>
       <div className="container-group hue-rotate">
         <div className="row" id="forecast-block">
