@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 import "./styles.css";
+import Weather from "./Weather";
 
 export default function Search(props) {
-  const [city, setCity] = useState(props.defaultCity);
   function handleSubmit(event) {
     event.preventDefault();
+    Search(props.city);
   }
+
   function handleCityChange(event) {
-    setCity(event.target.value);
+    props.setCity(event.target.value);
   }
 
   return (
-    <div className="Search">
+    <div className="Search" searchdata={props.handleCityChange}>
       <form onSubmit={handleSubmit} className="searchform" id="search-form">
         <input
           onChange={handleCityChange}
           type="text"
-          id="city-input"
+          id="cityinput"
           placeholder="Enter your city..."
         />
         <input type="submit" className="btn-search" value="Search" />

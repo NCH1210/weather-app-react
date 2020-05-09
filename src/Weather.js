@@ -4,10 +4,9 @@ import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import Search from "./Search";
 
-<Search city="Paris" />;
-
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
@@ -24,47 +23,54 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="Weather">
-        <h2 id="city">{weatherData.city} </h2>
-        <h3 className="date-display">
-          <FormattedDate date={weatherData.date} />
-        </h3>
-        <p className="hue-rotate">
-          <img
-            src="http://openweathermap.org/img/wn/02d@2x.png"
-            width="10%"
-            id="description-icon"
-          />
-          <span id="description">{weatherData.description}</span>
-        </p>
-        <div className="row">
-          <div className="col-sm">Temperature</div>
-          <div className="col-sm">Humidity</div>
-          <div className="col-sm">Wind</div>
+      <div>
+        <div>
+          <Search city={city} setCity={setCity} />
         </div>
-        <div className="row display">
-          <div className="col-sm">
-            <span id="temperature">{Math.round(weatherData.temperature)}</span>
-            <span id="units">
-              <a href="#" className="active" id="CelsiusLink">
-                °C
-              </a>{" "}
-              |
-              <a id="FahrenheitLink" href="#">
-                °F
-              </a>
-            </span>
+        <div className="Weather">
+          <h2 id="city">{weatherData.city} </h2>
+          <h3 className="date-display">
+            <FormattedDate date={weatherData.date} />
+          </h3>
+          <p className="hue-rotate">
+            <img
+              src="http://openweathermap.org/img/wn/02d@2x.png"
+              width="10%"
+              id="description-icon"
+            />
+            <span id="description">{weatherData.description}</span>
+          </p>
+          <div className="row">
+            <div className="col-sm">Temperature</div>
+            <div className="col-sm">Humidity</div>
+            <div className="col-sm">Wind</div>
           </div>
-          <div className="col-sm">
-            <span id="humidity" />
-            {weatherData.humidity}%
+          <div className="row display">
+            <div className="col-sm">
+              <span id="temperature">
+                {Math.round(weatherData.temperature)}
+              </span>
+              <span id="units">
+                <a href="#" className="active" id="CelsiusLink">
+                  °C
+                </a>{" "}
+                |
+                <a id="FahrenheitLink" href="#">
+                  °F
+                </a>
+              </span>
+            </div>
+            <div className="col-sm">
+              <span id="humidity" />
+              {weatherData.humidity}%
+            </div>
+            <div className="col-sm">
+              <span id="wind" />
+              {weatherData.wind}km/h
+            </div>
           </div>
-          <div className="col-sm">
-            <span id="wind" />
-            {weatherData.wind}km/h
-          </div>
+          <hr />
         </div>
-        <hr />
       </div>
     );
   } else {
