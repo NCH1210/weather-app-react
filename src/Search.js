@@ -4,6 +4,7 @@ import "./styles.css";
 export default function Search(props) {
   function handleSubmit(event) {
     event.preventDefault();
+    props.searchCity();
   }
 
   function handleCityChange(event) {
