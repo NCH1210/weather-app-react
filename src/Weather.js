@@ -14,7 +14,7 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      icon: response.data.weather[0].icon,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
       wind: 12,
       city: response.data.name,
@@ -38,11 +38,7 @@ export default function Weather(props) {
             <FormattedDate date={weatherData.date} />
           </h3>
           <p className="hue-rotate">
-            <img
-              src="http://openweathermap.org/img/wn/02d@2x.png"
-              width="10%"
-              id="description-icon"
-            />
+            <img src={weatherData.icon} width="10%" id="description-icon" />
             <span id="description">{weatherData.description}</span>
           </p>
           <div className="row">
@@ -80,5 +76,6 @@ export default function Weather(props) {
     );
   } else {
     searchCity();
+    return "Loading...";
   }
 }
