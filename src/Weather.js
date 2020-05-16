@@ -3,6 +3,8 @@ import "./styles.css";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import Search from "./Search";
+import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -14,7 +16,8 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
+      /*<!--`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` -->*/
       date: new Date(response.data.dt * 1000),
       wind: 12,
       city: response.data.name,
@@ -37,9 +40,12 @@ export default function Weather(props) {
           <h3 className="date-display">
             <FormattedDate date={weatherData.date} />
           </h3>
-          <p className="hue-rotate">
-            <img src={weatherData.icon} width="10%" id="description-icon" />
-            <span id="description">{weatherData.description}</span>
+          <p className="weather-icon">
+            <WeatherIcon
+              data={weatherData.icon}
+              width="10%"
+              id="description-icon"
+            />
           </p>
           <div className="row">
             <div className="col-sm">Temperature</div>
@@ -48,18 +54,7 @@ export default function Weather(props) {
           </div>
           <div className="row display">
             <div className="col-sm">
-              <span id="temperature">
-                {Math.round(weatherData.temperature)}
-              </span>
-              <span id="units">
-                <a href="#" className="active" id="CelsiusLink">
-                  °C
-                </a>{" "}
-                |
-                <a id="FahrenheitLink" href="#">
-                  °F
-                </a>
-              </span>
+              <WeatherTemperature celsius={weatherData.temperature} />
             </div>
             <div className="col-sm">
               <span id="humidity" />
