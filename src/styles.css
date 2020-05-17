@@ -41,14 +41,15 @@ a.col-sm #FahrenheitLink {
 }
 
 #weather-icon {
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 #forecast-block {
   margin: 0 auto;
 }
 
-#element {
+#element .col-sm {
   display: block;
   margin: 0 auto;
 }
