@@ -4,17 +4,6 @@
   margin: 0 auto;
 }
 
-#forecast-block {
-  display: block-inline;
-  margin: 1px 0px 0px 150px;
-}
-
-.weather-icon {
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 body {
   display: block;
   text-align: center;
@@ -38,13 +27,6 @@ h3 {
   margin: 5px 0px 5px 0px;
 }
 
-p {
-  display: block;
-  margin: 0 auto;
-  padding: 0 0 0 0;
-  margin: -10px 0 -5px 0;
-}
-
 image {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
@@ -56,6 +38,19 @@ hr {
 
 a.col-sm #FahrenheitLink {
   color: blue;
+}
+
+#weather-icon {
+  margin-top: 10px;
+}
+
+#forecast-block {
+  margin: 0 auto;
+}
+
+#element {
+  display: block;
+  margin: 0 auto;
 }
 
 footer,

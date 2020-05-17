@@ -5,6 +5,7 @@ import FormattedDate from "./FormattedDate";
 import Search from "./Search";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -17,9 +18,8 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
-      /*<!--`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` -->*/
       date: new Date(response.data.dt * 1000),
-      wind: 12,
+      wind: response.data.wind.speed,
       city: response.data.name,
     });
   }
@@ -40,7 +40,7 @@ export default function Weather(props) {
           <h3 className="date-display">
             <FormattedDate date={weatherData.date} />
           </h3>
-          <p className="weather-icon">
+          <p className="weather-icon" id="weather-icon">
             <WeatherIcon
               data={weatherData.icon}
               width="10%"
@@ -67,6 +67,7 @@ export default function Weather(props) {
           </div>
           <hr />
         </div>
+        <WeatherForecast city={weatherData.city} color="#DAA520" />
       </div>
     );
   } else {
