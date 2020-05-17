@@ -1,18 +1,22 @@
 .App {
   font-family: "Bellota", cursive;
   text-align: center;
+  display: block;
   margin: 0 auto;
 }
 
-body {
+body .container {
+  margin: 0 auto;
   display: block;
   text-align: center;
-  margin: 0 auto;
   padding: 10px 10px 10px 10px;
   font-family: "Bellota", cursive;
-  max-width: 100%;
+
+  align-content: center;
   margin-top: 10px;
-  max-height: 100%;
+
+  width: 50%;
+  height: 50%;
 }
 
 form {
@@ -62,7 +66,7 @@ a.Github {
 }
 
 .weather-app {
-  max-width: 800px;
+  max-width: 500px;
   border: 1px solid #dadde1;
   margin: 0 auto;
   padding: 10px;

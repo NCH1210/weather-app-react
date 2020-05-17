@@ -47,21 +47,17 @@ export default function Weather(props) {
               id="description-icon"
             />
           </p>
-          <div className="row">
-            <div className="col-sm">Temperature</div>
-            <div className="col-sm">Humidity</div>
-            <div className="col-sm">Wind</div>
-          </div>
           <div className="row display">
             <div className="col-sm">
+              Temperature
               <WeatherTemperature celsius={weatherData.temperature} />
             </div>
             <div className="col-sm">
-              <span id="humidity" />
+              Humidity <br />
               {weatherData.humidity}%
             </div>
             <div className="col-sm">
-              <span id="wind" />
+              Wind <br />
               {weatherData.wind}km/h
             </div>
           </div>
